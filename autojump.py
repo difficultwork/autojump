@@ -12,9 +12,7 @@ from kivy.uix.label import Label
 from kivy.uix.popup import Popup
 from kivy.uix.button import Button
 
-#winName = '魔兽世界'
 winName = '魔兽世界'
-signal = False
 
 class AutoJumpTimer:
     signal = False
@@ -37,7 +35,7 @@ class AutoJumpTimer:
         count = 1
         while self.signal:
             if (count%16 == 0):
-                count = 0
+                count = 1
                 win32api.PostMessage(hwnd, win32con.WM_KEYDOWN, win32con.VK_SPACE, 0)
                 win32api.PostMessage(hwnd, win32con.WM_KEYUP, win32con.VK_SPACE, 0)
             else:
